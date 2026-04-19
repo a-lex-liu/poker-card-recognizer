@@ -1,0 +1,6 @@
+runs/
+train/
+valid/
+test/
+*.pt
+__pycache__/
