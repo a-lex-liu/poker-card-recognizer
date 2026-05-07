@@ -167,17 +167,37 @@ def test_model(model_path="runs/detect/train/weights/best.pt", test_dir="test", 
         total_fn += fn
         
         # Update per-class stats
-        for gt in ground_truth:
-            class_id = gt['class']
-            class_stats[class_id]['fn'] += 1
-        
+        matched_gt = set()
+
+        # Check predictions
         for pred in predictions:
-            class_id = pred['class']
-            if any(match_predictions_to_ground_truth([pred], [gt])[0] > 0 
-                   for gt in ground_truth if gt['class'] == class_id):
-                class_stats[class_id]['tp'] += 1
+            pred_class = pred['class']
+
+            matched = False
+
+            for gt_idx, gt in enumerate(ground_truth):
+                if gt_idx in matched_gt:
+                    continue
+
+                if pred_class != gt['class']:
+                    continue
+
+                iou = calculate_iou(pred, gt)
+
+                if iou >= 0.5:
+                    matched = True
+                    matched_gt.add(gt_idx)
+                    break
+
+            if matched:
+                class_stats[pred_class]['tp'] += 1
             else:
-                class_stats[class_id]['fp'] += 1
+                class_stats[pred_class]['fp'] += 1
+
+        # Any unmatched ground truth = false negative
+        for gt_idx, gt in enumerate(ground_truth):
+            if gt_idx not in matched_gt:
+                class_stats[gt['class']]['fn'] += 1
         
         # Print progress
         if idx % 10 == 0 or idx == len(image_files):
