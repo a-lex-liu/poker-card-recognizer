@@ -17,7 +17,16 @@ Training for 50 epochs significantly reduced false positives:
 - 10 epochs: 1158 false positives
 - 50 epochs: 257 false positives
 
-The largest remaining errors occur on:
-- overlapping cards
-- partially occluded cards
-- visually similar ranks/suits (especially 8s and Aces)
+## Failure Cases
+
+The dataset labels only the top-left and bottom-right card indices rather than the entire card body.
+
+As a result, the model occasionally predicts additional detections on the top-right or bottom-left regions of symmetric cards. These detections are counted as false positives during evaluation even though the visual patterns are very similar to the labeled regions.
+
+### Example Failure
+
+![failure1](failure1.jpg)
+
+![failure2](failure2.jpg)
+
+![failure3](failure3.jpg)

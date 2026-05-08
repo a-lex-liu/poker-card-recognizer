@@ -125,6 +125,7 @@ def test_model(model_path="runs/detect/train/weights/best.pt", test_dir="test", 
     total_tp = 0
     total_fp = 0
     total_fn = 0
+    image_results = []
     class_stats = defaultdict(lambda: {'tp': 0, 'fp': 0, 'fn': 0})
     
     for idx, image_file in enumerate(image_files, 1):
@@ -160,6 +161,18 @@ def test_model(model_path="runs/detect/train/weights/best.pt", test_dir="test", 
         
         # Match predictions to ground truth
         tp, fp, fn = match_predictions_to_ground_truth(predictions, ground_truth)
+
+        failure_score = fp + fn
+
+        image_results.append({
+            "image": image_file,
+            "tp": tp,
+            "fp": fp,
+            "fn": fn,
+            "failure_score": failure_score,
+            "ground_truth": len(ground_truth),
+            "predictions": len(predictions)
+        })
         
         # Update global stats
         total_tp += tp
@@ -246,5 +259,23 @@ def test_model(model_path="runs/detect/train/weights/best.pt", test_dir="test", 
         
         print(f"{class_name:10} | TP: {class_tp:3} FP: {class_fp:3} FN: {class_fn:3} | Precision: {class_precision:.4f} | Recall: {class_recall:.4f}")
 
+    # Find worst failure cases
+    worst_cases = sorted(
+        image_results,
+        key=lambda x: x["failure_score"],
+        reverse=True
+    )
+
+    print("\n" + "=" * 80)
+    print("TOP 3 FAILURE CASES")
+    print("=" * 80)
+
+    for i, case in enumerate(worst_cases[:3], 1):
+        print(f"\n#{i}")
+        print(f"Image: {case['image']}")
+        print(f"Failure Score: {case['failure_score']}")
+        print(f"TP: {case['tp']} | FP: {case['fp']} | FN: {case['fn']}")
+        print(f"Ground Truth: {case['ground_truth']}")
+        print(f"Predictions: {case['predictions']}")
 if __name__ == "__main__":
     test_model()
