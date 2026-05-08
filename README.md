@@ -4,7 +4,7 @@
 ![input](demo.jpg)
 
 ### Output
-![output](results_demo.jpg)
+![output](result_demo.jpg)
 
 ## Model Comparison
 | Model | Precision | Recall | F1 Score |
