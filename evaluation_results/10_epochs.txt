@@ -1,0 +1,66 @@
+================================================================================
+OVERALL STATISTICS
+================================================================================
+Total True Positives:  7514
+Total False Positives: 1158
+Total False Negatives: 74
+
+Precision: 0.8665
+Recall:    0.9902
+F1 Score:  0.9242
+
+================================================================================
+PER-CLASS STATISTICS
+================================================================================
+10c        | TP: 134 FP:  33 FN:   3 | Precision: 0.8024 | Recall: 0.9781
+10d        | TP: 170 FP:  32 FN:   0 | Precision: 0.8416 | Recall: 1.0000
+10h        | TP: 148 FP:  29 FN:   1 | Precision: 0.8362 | Recall: 0.9933
+10s        | TP: 149 FP:  18 FN:   2 | Precision: 0.8922 | Recall: 0.9868
+2c         | TP: 139 FP:   6 FN:   0 | Precision: 0.9586 | Recall: 1.0000
+2d         | TP: 157 FP:   6 FN:   1 | Precision: 0.9632 | Recall: 0.9937
+2h         | TP: 154 FP:   5 FN:   2 | Precision: 0.9686 | Recall: 0.9872
+2s         | TP: 150 FP:   7 FN:   3 | Precision: 0.9554 | Recall: 0.9804
+3c         | TP: 154 FP:   4 FN:   1 | Precision: 0.9747 | Recall: 0.9935
+3d         | TP: 142 FP:  15 FN:   1 | Precision: 0.9045 | Recall: 0.9930
+3h         | TP: 169 FP:  19 FN:   0 | Precision: 0.8989 | Recall: 1.0000
+3s         | TP: 163 FP:   8 FN:   1 | Precision: 0.9532 | Recall: 0.9939
+4c         | TP: 140 FP:   3 FN:   2 | Precision: 0.9790 | Recall: 0.9859
+4d         | TP: 138 FP:  11 FN:   1 | Precision: 0.9262 | Recall: 0.9928
+4h         | TP: 128 FP:  10 FN:   0 | Precision: 0.9275 | Recall: 1.0000
+4s         | TP: 133 FP:   4 FN:   2 | Precision: 0.9708 | Recall: 0.9852
+5c         | TP: 152 FP:  19 FN:   0 | Precision: 0.8889 | Recall: 1.0000
+5d         | TP: 172 FP:  22 FN:   1 | Precision: 0.8866 | Recall: 0.9942
+5h         | TP: 167 FP:  27 FN:   2 | Precision: 0.8608 | Recall: 0.9882
+5s         | TP: 167 FP:  29 FN:   1 | Precision: 0.8520 | Recall: 0.9940
+6c         | TP: 134 FP:  27 FN:   3 | Precision: 0.8323 | Recall: 0.9781
+6d         | TP: 163 FP:  31 FN:   4 | Precision: 0.8402 | Recall: 0.9760
+6h         | TP: 146 FP:  30 FN:   2 | Precision: 0.8295 | Recall: 0.9865
+6s         | TP: 153 FP:  38 FN:   2 | Precision: 0.8010 | Recall: 0.9871
+7c         | TP: 161 FP:   0 FN:   0 | Precision: 1.0000 | Recall: 1.0000
+7d         | TP: 153 FP:   1 FN:   1 | Precision: 0.9935 | Recall: 0.9935
+7h         | TP: 167 FP:   3 FN:   0 | Precision: 0.9824 | Recall: 1.0000
+7s         | TP: 135 FP:   2 FN:   0 | Precision: 0.9854 | Recall: 1.0000
+8c         | TP: 137 FP:  72 FN:   3 | Precision: 0.6555 | Recall: 0.9786
+8d         | TP: 129 FP:  59 FN:   1 | Precision: 0.6862 | Recall: 0.9923
+8h         | TP: 149 FP:  79 FN:   6 | Precision: 0.6535 | Recall: 0.9613
+8s         | TP: 121 FP:  50 FN:   2 | Precision: 0.7076 | Recall: 0.9837
+9c         | TP: 137 FP:  27 FN:   2 | Precision: 0.8354 | Recall: 0.9856
+9d         | TP: 126 FP:  38 FN:   2 | Precision: 0.7683 | Recall: 0.9844
+9h         | TP: 106 FP:  14 FN:   1 | Precision: 0.8833 | Recall: 0.9907
+9s         | TP: 150 FP:  23 FN:   1 | Precision: 0.8671 | Recall: 0.9934
+Ac         | TP: 135 FP:  60 FN:   0 | Precision: 0.6923 | Recall: 1.0000
+Ad         | TP: 141 FP:  72 FN:   5 | Precision: 0.6620 | Recall: 0.9658
+Ah         | TP: 155 FP:  82 FN:   3 | Precision: 0.6540 | Recall: 0.9810
+As         | TP: 148 FP:  82 FN:   6 | Precision: 0.6435 | Recall: 0.9610
+Jc         | TP: 145 FP:   3 FN:   0 | Precision: 0.9797 | Recall: 1.0000
+Jd         | TP: 128 FP:   2 FN:   2 | Precision: 0.9846 | Recall: 0.9846
+Jh         | TP: 154 FP:   4 FN:   0 | Precision: 0.9747 | Recall: 1.0000
+Js         | TP: 144 FP:  16 FN:   2 | Precision: 0.9000 | Recall: 0.9863
+Kc         | TP: 147 FP:   4 FN:   0 | Precision: 0.9735 | Recall: 1.0000
+Kd         | TP: 114 FP:   6 FN:   0 | Precision: 0.9500 | Recall: 1.0000
+Kh         | TP: 166 FP:   3 FN:   0 | Precision: 0.9822 | Recall: 1.0000
+Ks         | TP: 144 FP:   4 FN:   0 | Precision: 0.9730 | Recall: 1.0000
+Qc         | TP: 120 FP:   4 FN:   0 | Precision: 0.9677 | Recall: 1.0000
+Qd         | TP: 126 FP:   2 FN:   1 | Precision: 0.9844 | Recall: 0.9921
+Qh         | TP: 136 FP:  11 FN:   1 | Precision: 0.9252 | Recall: 0.9927
+Qs         | TP: 118 FP:   2 FN:   0 | Precision: 0.9833 | Recall: 1.0000
