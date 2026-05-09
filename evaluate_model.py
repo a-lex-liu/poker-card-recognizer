@@ -1,8 +1,6 @@
 from ultralytics import YOLO
 import os
 import yaml
-from pathlib import Path
-import numpy as np
 from collections import defaultdict
 
 def parse_yolo_label(label_path):

@@ -16,23 +16,13 @@ A YOLOv8-based playing card detection project trained on a custom card dataset.
 ![input](demo.jpg)
 
 ### Output
-![output](result_demo.jpg)
+![output](results_demo.jpg)
 
 ## Installation
 
-### Option 1: Install dependencies directly
-
 ```bash
 pip install ultralytics
-pip install pyyaml
-```
-
-### Option 2: Install from requirements file
-
-If you add a `requirements.txt`, install with:
-
-```bash
-pip install -r requirements.txt
+pip install kagglehub
 ```
 
 ## Usage
