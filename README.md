@@ -1,10 +1,16 @@
 # Poker Card Recognizer
 
-A YOLOv8-based playing card detection project trained on a custom card dataset.
+A YOLOv8-based playing card corner detection project trained on a custom card dataset.
+
+## How It Works
+
+The project uses YOLOv8 to detect playing card corner indices from images.
+
+The dataset labels the top-left and bottom-right card corners rather than full card bodies. The model therefore learns to detect visible rank/suit regions instead of complete physical cards.
 
 ## Features
 
-- YOLOv8-based card detection
+- YOLOv8-based card corner detection
 - Evaluation script with TP/FP/FN metrics
 - Failure case analysis
 - Command-line card detection
@@ -21,8 +27,7 @@ A YOLOv8-based playing card detection project trained on a custom card dataset.
 ## Installation
 
 ```bash
-pip install ultralytics
-pip install kagglehub
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -31,6 +36,13 @@ pip install kagglehub
 
 ```bash
 python detect_cards.py demo.jpg
+```
+
+### Example Output
+
+```text
+As: 0.88
+Ah: 0.74
 ```
 
 ### Train the model
@@ -45,6 +57,8 @@ python train_model.py
 python evaluate_model.py
 ```
 
+Evaluation metrics are computed using IoU-based matching between predicted and labeled card corner regions.
+
 ## Project Structure
 
 ```text
@@ -54,6 +68,7 @@ python evaluate_model.py
 ├── evaluate_model.py
 ├── download_dataset.py
 ├── data.yaml
+├── requirements.txt
 └── evaluation_results/
 ```
 
@@ -75,10 +90,10 @@ The dataset labels only the top-left and bottom-right card indices rather than t
 
 As a result, the model occasionally predicts additional detections on the top-right or bottom-left regions of symmetric cards. These detections are counted as false positives during evaluation even though the visual patterns are very similar to the labeled regions.
 
-### Example Failure
+### Failure Examples
 
-![failure1](failure1.jpg)
-
-![failure2](failure2.jpg)
-
-![failure3](failure3.jpg)
+| Example | Description |
+|---|---|
+| ![failure1](failure1.jpg) | Symmetric false positive detections |
+| ![failure2](failure2.jpg) | Overlapping card ambiguity |
+| ![failure3](failure3.jpg) | Rotated card corner confusion |
