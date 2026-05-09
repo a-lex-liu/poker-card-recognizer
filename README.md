@@ -1,12 +1,74 @@
+# Poker Card Recognizer
+
+A YOLOv8-based playing card detection project trained on a custom card dataset.
+
+## Features
+
+- YOLOv8-based card detection
+- Evaluation script with TP/FP/FN metrics
+- Failure case analysis
+- Command-line card detection
+- Comparison between 10-epoch and 50-epoch models
+
 ## Demo
 
 ### Input
 ![input](demo.jpg)
 
 ### Output
-![output](result_demo.jpg)
+![output](results_demo.jpg)
+
+## Installation
+
+### Option 1: Install dependencies directly
+
+```bash
+pip install ultralytics
+pip install pyyaml
+```
+
+### Option 2: Install from requirements file
+
+If you add a `requirements.txt`, install with:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+### Detect cards in an image
+
+```bash
+python detect_cards.py demo.jpg
+```
+
+### Train the model
+
+```bash
+python train_model.py
+```
+
+### Evaluate the model
+
+```bash
+python evaluate_model.py
+```
+
+## Project Structure
+
+```text
+.
+├── detect_cards.py
+├── train_model.py
+├── evaluate_model.py
+├── download_dataset.py
+├── data.yaml
+└── evaluation_results/
+```
 
 ## Model Comparison
+
 | Model | Precision | Recall | F1 Score |
 |---|---|---|---|
 | 10 Epochs | 0.8665 | 0.9902 | 0.9242 |
