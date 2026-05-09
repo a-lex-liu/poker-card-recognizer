@@ -1,0 +1,4 @@
+ultralytics
+kagglehub
+pyyaml
+numpy
