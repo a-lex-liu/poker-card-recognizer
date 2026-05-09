@@ -32,18 +32,15 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Detect cards in an image
+## Dataset
 
+- ~20,000 annotated images
+- YOLO-format labels
+- Downloaded using KaggleHub
 ```bash
-python detect_cards.py demo.jpg
+python download_dataset.py
 ```
-
-### Example Output
-
-```text
-As: 0.88
-Ah: 0.74
-```
+- The test, train and valid folders should be directly under the main folder
 
 ### Train the model
 
@@ -55,6 +52,19 @@ python train_model.py
 
 ```bash
 python evaluate_model.py
+```
+
+### Detect cards in an image
+
+```bash
+python detect_cards.py demo.jpg
+```
+
+### Example Output
+
+```text
+As: 0.88
+Ah: 0.74
 ```
 
 Evaluation metrics are computed using IoU-based matching between predicted and labeled card corner regions.
@@ -94,6 +104,6 @@ As a result, the model occasionally predicts additional detections on the top-ri
 
 | Example | Description |
 |---|---|
-| ![failure1](failure1.jpg) | Symmetric false positive detections |
-| ![failure2](failure2.jpg) | Overlapping card ambiguity |
-| ![failure3](failure3.jpg) | Rotated card corner confusion |
+| ![failure1](failure1.jpg) | Detected wrong corners |
+| ![failure2](failure2.jpg) | Detected extra corners |
+| ![failure3](failure3.jpg) | Detected extra corners |
