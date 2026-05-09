@@ -16,7 +16,7 @@ A YOLOv8-based playing card detection project trained on a custom card dataset.
 ![input](demo.jpg)
 
 ### Output
-![output](results_demo.jpg)
+![output](result_demo.jpg)
 
 ## Installation
 
